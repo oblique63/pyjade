@@ -88,8 +88,10 @@ SECRET_KEY = '_r4d7*&$@r18hy7w=pi!%97nha-_!k$#+y%go1blia6u%gs$&l'
 # List of callables that know how to import templates from various sources.
 
 TEMPLATE_LOADERS = (
-    'pyjade.ext.django.loaders.FSLoader',
-    'pyjade.ext.django.loaders.AppLoader',
+    ('pyjade.ext.django.Loader',(
+        'django.template.loaders.filesystem.Loader',
+        'django.template.loaders.app_directories.Loader',
+    )),
 )
 
 # TEMPLATE_LOADERS = (
